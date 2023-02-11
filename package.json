@@ -1,7 +1,7 @@
 {
   "name": "custom-function",
   "version": "1.0.0",
-  "description": "Literally the only sane way, if not the fastest one, to extend the Function class witohut evaluation",
+  "description": "Literally the only sane way, if not the fastest one, to extend the Function class without evaluation",
   "main": "./cjs/index.js",
   "scripts": {
     "build": "npm run cjs && npm run test",

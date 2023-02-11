@@ -1,4 +1,5 @@
 'use strict';
+/*! (c) Andrea Giammarchi */
 const {setPrototypeOf} = Object;
 
 /**
