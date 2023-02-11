@@ -2,6 +2,8 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/WebReflection/custom-function/badge.svg?branch=main)](https://coveralls.io/github/WebReflection/custom-function?branch=main) [![build status](https://github.com/WebReflection/custom-function/actions/workflows/node.js.yml/badge.svg)](https://github.com/WebReflection/custom-function/actions)
 
+<sup>**Social Media Photo by [Aaron Huber](https://unsplash.com/@aahubs) on [Unsplash](https://unsplash.com/)**</sup>
+
 Literally the only sane way, if not the fastest one, to extend the `Function` class **witohut evaluation**.
 
 ```js
