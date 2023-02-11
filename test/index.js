@@ -15,8 +15,20 @@ class MyOtherFunction extends MyFunction {
   }
 }
 
+class MyComplexFunction extends MyOtherFunction {
+  #random;
+  constructor(fn) {
+    super(fn);
+    this.#random = Math.random();
+  }
+  get random() {
+    return this.#random;
+  }
+}
+
 const mf = new MyFunction((a, b) => a + b);
 const mof = new MyOtherFunction((a, b) => a * b);
+const mcf = new MyComplexFunction(() => {});
 
 console.assert(mf instanceof Function);
 console.assert(mf instanceof MyFunction);
@@ -32,3 +44,6 @@ console.assert(mof(2, 3) === 6);
 console.assert(mof.invoke(2, 3) === 6);
 console.assert(mof.toString() === '[native code]');
 console.assert(mof.test(2, 3) === 6);
+
+console.assert(typeof mcf.random === 'number');
+console.assert(mcf.random === mcf.random);
