@@ -34,3 +34,32 @@ cf.toString();    // "[native code]"
 On top of these limitations, adding *O(n)* features requires more effort than swapping once the prototypal chain, where the original `Function.prototype` root of the chain will be preserved regardless.
 
 As summary: every solution to date that is not based on native `class extends` feature is somehow limited, likely slower, surely inferior in terms of DX.
+
+### Why only Function?
+
+While writing this I had `Function` as one problematic constructor that cannot be extended due inevitable code evaluation involved while invoking `super()` but it's true that this approach/pattern cna be used for any constructor that could be problematic if invoked right away, which is why there is a `custom-function/factory` export too so that anything becomes possible, example:
+
+```js
+// const custom = require('custom-function/factory');
+import custom from 'custom-function/factory';
+
+// reproduce exactly what this module provides:
+const CustomFunction = custom(Function);
+class MyFunction extends CustomFunction {}
+
+// go wild with any illegal constructor too
+const Div = custom(HTMLDivElement);
+class MyDiv extends Div {
+  constructor(...childNodes) {
+    super(document.createElement('div'));
+    this.append(...childNodes);
+  }
+}
+
+document.body.appendChild(
+  new MyDiv(
+    new MyDiv('A'),
+    new MyDiv('B', 'C')
+  )
+);
+```
