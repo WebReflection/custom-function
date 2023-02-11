@@ -1,0 +1,40 @@
+{
+  "name": "custom-function",
+  "version": "0.0.0",
+  "description": "Literally the only sane way, if not the fastest one, to extend the Function class witohut evaluation",
+  "main": "./cjs/index.js",
+  "scripts": {
+    "build": "npm run cjs && npm run test",
+    "cjs": "ascjs --no-default esm cjs",
+    "test": "c8 node test/index.js",
+    "coverage": "mkdir -p ./coverage; c8 report --reporter=text-lcov > ./coverage/lcov.info"
+  },
+  "keywords": [
+    "Function",
+    "class",
+    "extend"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "devDependencies": {
+    "ascjs": "^5.0.1",
+    "c8": "^7.12.0"
+  },
+  "module": "./esm/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./esm/index.js",
+      "default": "./cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebReflection/custom-function.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WebReflection/custom-function/issues"
+  },
+  "homepage": "https://github.com/WebReflection/custom-function#readme"
+}
