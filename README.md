@@ -37,7 +37,7 @@ As summary: every solution to date that is not based on native `class extends` f
 
 ### Why only Function?
 
-While writing this I had `Function` as one problematic constructor that cannot be extended due inevitable code evaluation involved while invoking `super()` but it's true that this approach/pattern cna be used for any constructor that could be problematic if invoked right away, which is why there is a `custom-function/factory` export too so that anything becomes possible, example:
+While writing this I had `Function` as one problematic constructor that cannot be extended due inevitable code evaluation involved while invoking `super()` but it's true that this approach/pattern can be used for any constructor that could be problematic if invoked right away, which is why there is a `custom-function/factory` export too so that anything becomes possible, example:
 
 ```js
 // const custom = require('custom-function/factory');
