@@ -1,4 +1,4 @@
-/*! (c) Andrea Giammarchi */
+/*! (c) Andrea Giammarchi - ISC */
 const {setPrototypeOf} = Object;
 
 /**
