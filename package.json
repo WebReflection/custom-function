@@ -1,6 +1,6 @@
 {
   "name": "custom-function",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Literally the only sane way, if not the fastest one, to extend the Function class without evaluation",
   "main": "./cjs/index.js",
   "scripts": {
