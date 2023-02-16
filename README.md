@@ -63,3 +63,27 @@ document.body.appendChild(
   )
 );
 ```
+
+### Performance
+
+The [benchmark](./test/benchmark.js) test properties added to a callback using this module VS using a predefined *descriptors* object via `Object.defineProperties` to compare the most possible perf-tuned define properties approach against this module pattern.
+
+Use `npm run bench` to test yourself locally, after cloning this repo.
+
+```
+cold run
+CustomFunction
+  creation: 20.884ms
+  metohd: 3.421ms
+Object.defineProperties
+  creation: 76.917ms
+  metohd: 4.838ms
+
+hot run
+CustomFunction
+  creation: 7.597ms
+  metohd: 0.667ms
+Object.defineProperties
+  creation: 94.064ms
+  metohd: 1.359ms
+```
