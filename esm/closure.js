@@ -13,4 +13,5 @@ export default class CustomFunction {
   }
 }
 
-CustomFunction.prototype = Function.prototype;
+// I am really sorry you are still using closure compiler
+setPrototypeOf(CustomFunction.prototype, Function.prototype);
