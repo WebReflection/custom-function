@@ -32,6 +32,10 @@
       "import": "./esm/factory.js",
       "default": "./cjs/factory.js"
     },
+    "./closure-factory": {
+      "import": "./esm/closure-factory.js",
+      "default": "./cjs/closure-factory.js"
+    },
     "./factory": {
       "import": "./esm/factory.js",
       "default": "./cjs/factory.js"

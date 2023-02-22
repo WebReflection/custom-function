@@ -64,6 +64,13 @@ document.body.appendChild(
 );
 ```
 
+### Exports
+
+  * **custom-function** to extend functions without invoking `Function`
+  * **custom-function/factory** to extend any class without invoking the extended class constructor
+  * **custom-function/closure** to extend functions in a *Closure Compiler* friendly way
+  * **custom-function/closure-factory** to extend any class in a *Closure Compiler* friendly way
+
 ### Performance
 
 The [benchmark](./test/benchmark.js) test properties added to a callback using this module VS using a predefined *descriptors* object via `Object.defineProperties` to compare the most possible perf-tuned define properties approach against this module pattern.
