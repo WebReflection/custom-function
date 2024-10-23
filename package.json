@@ -16,10 +16,10 @@
     "extend"
   ],
   "author": "Andrea Giammarchi",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "ascjs": "^5.0.1",
-    "c8": "^7.12.0"
+    "ascjs": "^6.0.3",
+    "c8": "^10.1.2"
   },
   "module": "./esm/index.js",
   "type": "module",
