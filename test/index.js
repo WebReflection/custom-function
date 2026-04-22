@@ -1,5 +1,8 @@
-test(require('../cjs'));
-test(require('../cjs/factory')(Function));
+import CustomFunction from '../esm/index.js';
+import factory from '../esm/factory.js';
+
+test(CustomFunction);
+test(factory(Function));
 
 function test(CustomFunction) {
   class MyFunction extends CustomFunction {

@@ -1,6 +1,6 @@
-const CustomFunction = require('../cjs');
+import CustomFunction from '../esm/index.js';
 
-const {defineProperties, getOwnPropertyDescriptors} = Object;
+const { defineProperties, getOwnPropertyDescriptors } = Object;
 
 const RETURN = 1 << 0;
 const UPDATE = 1 << 1;

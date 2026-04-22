@@ -1,5 +1,3 @@
-const { setPrototypeOf } = Object;
-
 /**
  * Default export is a constructor whose `.prototype` is `Function.prototype`, so
  * `class Sub extends CustomFunction` upgrades plain functions without ever calling `Function`
@@ -13,8 +11,5 @@ const { setPrototypeOf } = Object;
  * @param {F} fn Callback to upgrade to `instanceof` the concrete subclass.
  * @returns {F}
  */
-export default function CustomFunction(fn) {
-  return setPrototypeOf(fn, new.target.prototype);
-}
-
-CustomFunction.prototype = Function.prototype;
+declare function CustomFunction<F extends Function>(fn: F): F;
+export default CustomFunction;
