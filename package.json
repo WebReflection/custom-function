@@ -2,11 +2,14 @@
   "name": "custom-function",
   "version": "2.0.0",
   "description": "Literally the only sane way, if not the fastest one, to extend the Function class without evaluation",
-  "main": "./cjs/index.js",
+  "main": "./esm/index.js",
+  "module": "./esm/index.js",
+  "types": "./types/index.d.ts",
+  "type": "module",
   "scripts": {
-    "build": "npm run cjs && npm run test",
+    "build": "npm run build:types && npm run test",
+    "build:types": "tsc -p tsconfig.json",
     "bench": "node test/benchmark.js",
-    "cjs": "ascjs --no-default esm cjs",
     "test": "c8 node test/index.js",
     "coverage": "mkdir -p ./coverage; c8 report --reporter=text-lcov > ./coverage/lcov.info"
   },
@@ -18,27 +21,25 @@
   "author": "Andrea Giammarchi",
   "license": "MIT",
   "devDependencies": {
-    "ascjs": "^6.0.3",
-    "c8": "^10.1.2"
+    "c8": "^11.0.0",
+    "typescript": "^6.0.3"
   },
-  "module": "./esm/index.js",
-  "type": "module",
   "exports": {
     ".": {
-      "import": "./esm/index.js",
-      "default": "./cjs/index.js"
+      "types": "./types/index.d.ts",
+      "import": "./esm/index.js"
     },
     "./closure": {
-      "import": "./esm/factory.js",
-      "default": "./cjs/factory.js"
+      "types": "./types/closure.d.ts",
+      "import": "./esm/closure.js"
     },
     "./closure-factory": {
-      "import": "./esm/closure-factory.js",
-      "default": "./cjs/closure-factory.js"
+      "types": "./types/closure-factory.d.ts",
+      "import": "./esm/closure-factory.js"
     },
     "./factory": {
-      "import": "./esm/factory.js",
-      "default": "./cjs/factory.js"
+      "types": "./types/factory.d.ts",
+      "import": "./esm/factory.js"
     },
     "./package.json": "./package.json"
   },
